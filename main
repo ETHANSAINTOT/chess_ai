@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+## EPITECH PROJECT, 2025
+## G-INN-220:chess_ai
+## File description:
+## chess_1v1.py
+
+import menu_update
+import os
+
+# Vérifier si le dossier assets existe, sinon le créer
+if not os.path.exists("assets"):
+    os.makedirs("assets")
+    print("Dossier 'assets' créé. Veuillez y placer vos images de pièces d'échecs.")
+
+# Lancer le menu principal
+if __name__ == "__main__":
+    menu_update.main()
