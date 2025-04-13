@@ -12,8 +12,9 @@ import os
 # Créer le dossier assets s'il n'existe pas
 os.makedirs("assets", exist_ok=True)
 
-# Importer le module du jeu 1v1
+# Importer les modules de jeu
 import chess_1v1
+import chess_player_vs_ai
 
 # Initialisation de Pygame
 pygame.init()
@@ -149,8 +150,13 @@ def main():
                 # En cas d'erreur, on continue à exécuter le menu
         
         elif game_mode == "player_vs_ai":
-            # TODO: Implémenter le mode Player vs AI
-            print("Mode Player vs AI - Pas encore implémenté")
+            print("Lancement du mode Player vs AI...")
+            try:
+                result = chess_player_vs_ai.main()
+                if result == "quit":
+                    running = False
+            except Exception as e:
+                print(f"Erreur lors du lancement du mode Player vs AI: {e}")
         
         elif game_mode == "player_vs_ai_progressive":
             # TODO: Implémenter le mode Player vs AI Progressive
